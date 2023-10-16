@@ -109,7 +109,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		HAL_UART_Receive_IT (&huart1, receive_mes, 30);
+   HAL_UART_Receive_IT (&huart1, receive_mes, 30);
 
   }
   /* USER CODE END 3 */
@@ -206,8 +206,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
     HAL_UART_Transmit(&huart1, receive_mes, 30, 100);
     HAL_UART_Receive_IT (&huart1, receive_mes, 30);
-		sprintf((char*)message, "Test OK!\r\n");
-		HAL_UART_Transmit(&huart1,message, strlen((char*)message),100);
+    sprintf((char*)message, "Test OK!\r\n");
+    HAL_UART_Transmit(&huart1,message, strlen((char*)message),100);
 }
 /* USER CODE END 4 */
 
